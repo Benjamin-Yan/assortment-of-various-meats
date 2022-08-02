@@ -1,140 +1,147 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-<style>
-  body {
-    background-color: #e8964f;
-    font-family:DFKai-sb;
-  }
 
-  .container {
-    margin-top: 20px;
-    overflow: hidden;
-  }
+<head>
+  <meta charset="UTF-8">
+  <title>Assortment-of-various-meats</title>
 
-  /* Style the buttons */
-  .btn {
-    border: none;
-    outline: none;
-    padding: 12px 16px;
-    background-color: #f1f1f1;
-    cursor: pointer;
-  }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #e8964f;
+      font-family: DFKai-sb;
+    }
 
-  .btn:hover {
-    background-color: #ddd;
-  }
+    .container {
+      margin-top: 20px;
+      overflow: hidden;
+    }
 
-  .btn.active {
-    background-color: #666;
-    color: white;
-  }
+    /* Style the buttons */
+    .btn {
+      border: none;
+      outline: none;
+      padding: 12px 16px;
+      background-color: #f1f1f1;
+      cursor: pointer;
+    }
 
-  /* Style the options */
-  .user-wrapper {
-    margin-top: 50px;
-  }
+    .btn:hover {
+      background-color: #ddd;
+    }
 
-  .user-wrapper .user {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: all 0.3s;
-  }
+    .btn.active {
+      background-color: #666;
+      color: white;
+    }
 
-  .user-wrapper .user.hide {
-    opacity: 0;
-    top: 0;
-    left: 0;
-    transform: scale(0);
-    position: absolute;
-  }
+    /* Style the options */
+    .user-wrapper {
+      margin-top: 50px;
+    }
 
-  .user-wrapper .user .circle {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-    transition: all 0.3s;
-  }
+    .user-wrapper .user {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.3s;
+    }
 
-  .user-wrapper .user.developer .circle {
-    background-color: cyan;
-  }
+    .user-wrapper .user.hide {
+      opacity: 0;
+      top: 0;
+      left: 0;
+      transform: scale(0);
+      position: absolute;
+    }
 
-  .user-wrapper .user.designer .circle {
-    background-color: magenta;
-  }
+    .user-wrapper .user .circle {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      transition: all 0.3s;
+    }
 
-  .user-wrapper .user.consultant .circle {
-    background-color: gold;
-  }
+    .user-wrapper .user.developer .circle {
+      background-color: cyan;
+    }
 
-  .user-wrapper .user.management .circle {
-    background-color: black;
-  }
+    .user-wrapper .user.designer .circle {
+      background-color: magenta;
+    }
 
-  /*https://images.pexels.com/photos/1722198/pexels-photo-1722198.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500*/
-  .user-wrapper .user:nth-of-type(1) .circle {
-    background-image: url("imgs/板腱火鍋片.jpg");
-  }
+    .user-wrapper .user.consultant .circle {
+      background-color: gold;
+    }
 
-  .user-wrapper .user:nth-of-type(2) .circle {
-    background-image: url("imgs/壽喜燒肉片.jpg");
-  }
+    .user-wrapper .user.management .circle {
+      background-color: black;
+    }
 
-  .user-wrapper .user:nth-of-type(3) .circle {
-    background-image: url("imgs/無骨牛小排.jpg");
-  }
+    /*https://images.pexels.com/photos/1722198/pexels-photo-1722198.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500*/
+    .user-wrapper .user:nth-of-type(1) .circle {
+      background-image: url("imgs/板腱火鍋片.jpg");
+    }
 
-  .user-wrapper .user:nth-of-type(4) .circle {
-    background-image: url("imgs/進口松阪豬.jpg");
-  }
+    .user-wrapper .user:nth-of-type(2) .circle {
+      background-image: url("imgs/壽喜燒肉片.jpg");
+    }
 
-  .user-wrapper .user:nth-of-type(5) .circle {
-    background-image: url("imgs/紐西蘭法式羊排.jpg");
-  }
+    .user-wrapper .user:nth-of-type(3) .circle {
+      background-image: url("imgs/無骨牛小排.jpg");
+    }
 
-  .user-wrapper .user:nth-of-type(6) .circle {
-    background-image: url("imgs/肋眼.jpg");
-  }
+    .user-wrapper .user:nth-of-type(4) .circle {
+      background-image: url("imgs/進口松阪豬.jpg");
+    }
 
-  .user-wrapper .user:nth-of-type(7) .circle {
-    background-image: url("imgs/金磚骰子牛.jpg");
-  }
+    .user-wrapper .user:nth-of-type(5) .circle {
+      background-image: url("imgs/紐西蘭法式羊排.jpg");
+    }
 
-  .user-wrapper .user:nth-of-type(8) .circle {
-    background-image: url("imgs/帶骨牛小排.jpg");
-  }
+    .user-wrapper .user:nth-of-type(6) .circle {
+      background-image: url("imgs/肋眼.jpg");
+    }
 
-  .user-wrapper .user:nth-of-type(9) .circle {
-    background-image: url("imgs/美國牛五花火鍋片.jpg");
-  }
+    .user-wrapper .user:nth-of-type(7) .circle {
+      background-image: url("imgs/金磚骰子牛.jpg");
+    }
 
-  .user-wrapper .user:nth-of-type(10) .circle {
-    background-image: url("imgs/翼板牛排.jpg");
-  }
+    .user-wrapper .user:nth-of-type(8) .circle {
+      background-image: url("imgs/帶骨牛小排.jpg");
+    }
 
-  .user-wrapper .user:nth-of-type(11) .circle {
-    background-image: url("imgs/紐約客.jpg");
-  }
+    .user-wrapper .user:nth-of-type(9) .circle {
+      background-image: url("imgs/美國牛五花火鍋片.jpg");
+    }
 
-  .user-wrapper .user:nth-of-type(12) .circle {
-    background-image: url("imgs/菲力牛排.jpg");
-  }
+    .user-wrapper .user:nth-of-type(10) .circle {
+      background-image: url("imgs/翼板牛排.jpg");
+    }
 
-  /*原始大小填滿外框*/
-  .user-wrapper .user:nth-of-type(1n) .circle {
-    background-size: 150%;
-    /*cover;*/
-    background-position: center;
-  }
+    .user-wrapper .user:nth-of-type(11) .circle {
+      background-image: url("imgs/紐約客.jpg");
+    }
 
-  /*增加hover時的縮放效果*/
-  .user-wrapper .user:nth-of-type(1n) .circle:hover {
-    background-size: 160%;
-  }
-</style>
+    .user-wrapper .user:nth-of-type(12) .circle {
+      background-image: url("imgs/菲力牛排.jpg");
+    }
+
+    /*原始大小填滿外框*/
+    .user-wrapper .user:nth-of-type(1n) .circle {
+      background-size: 150%;
+      /*cover;*/
+      background-position: center;
+    }
+
+    /*增加hover時的縮放效果*/
+    .user-wrapper .user:nth-of-type(1n) .circle:hover {
+      background-size: 160%;
+    }
+  </style>
+
+</head>
 
 <body>
 
