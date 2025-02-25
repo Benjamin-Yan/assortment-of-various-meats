@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="text" id="aniInput" placeholder="輸入動漫關鍵字">
+<button id="subButton">Enter</button>
+
+<script>
+document.getElementById('subButton').addEventListener('click', function() {
+    let aniName = document.getElementById('aniInput').value;
+    let codeString;
+    fetch('https://gist.github.com/Benjamin-Yan/568d0c5ad45a7d20048c25f7ed79a1d3/raw/80e176d3e870e620113bfde513987f022b2a2594/SearchAnimeWallpaper.js')
+	.then(response => response.text())
+	.then(data => {
+		console.log("Fetched code:", data);
+		codeString = data;
+	});
+
+    codeString = codeString.replace("'');", `'${aniName}');`);
+    eval(codeString);
+});
+</script>
+
+</body>
+</html>
